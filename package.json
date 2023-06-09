@@ -1,6 +1,6 @@
 {
 	"name": "p-queue-cjs",
-	"version": "7.3.3",
+	"version": "7.3.4",
 	"description": "Promise queue with concurrency control. A fork of p-queue for commonjs.",
 	"repository": {
 		"type": "git",
@@ -55,7 +55,7 @@
 	],
 	"dependencies": {
 		"eventemitter3": "^4.0.7",
-		"p-timeout": "4.1.0"
+		"p-timeout-cjs": "^5.0.5"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^2.0.0",
