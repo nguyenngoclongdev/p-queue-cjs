@@ -1,12 +1,24 @@
 {
-	"name": "p-queue",
-	"version": "7.3.4",
-	"description": "Promise queue with concurrency control",
-	"license": "MIT",
-	"repository": "sindresorhus/p-queue",
-	"funding": "https://github.com/sponsors/sindresorhus",
-	"type": "module",
-	"exports": "./dist/index.js",
+	"name": "p-queue-cjs",
+	"version": "7.3.3",
+	"description": "Promise queue with concurrency control. A fork of p-queue for commonjs.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nguyenngoclongdev/p-queue-cjs"
+	},
+	"bugs": {
+		"url": "https://github.com/nguyenngoclongdev/p-queue-cjs/issues"
+	},
+	"sponsor": {
+		"url": "https://ko-fi.com/nguyenngoclong"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://ko-fi.com/nguyenngoclong"
+	},
+	"homepage": "https://nguyenngoclongdev.github.io",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"engines": {
 		"node": ">=12"
 	},
@@ -19,7 +31,6 @@
 	"files": [
 		"dist"
 	],
-	"types": "dist/index.d.ts",
 	"keywords": [
 		"promise",
 		"queue",
@@ -44,7 +55,7 @@
 	],
 	"dependencies": {
 		"eventemitter3": "^4.0.7",
-		"p-timeout": "^5.0.2"
+		"p-timeout": "4.1.0"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^2.0.0",
@@ -54,10 +65,10 @@
 		"benchmark": "^2.1.4",
 		"del-cli": "^5.0.0",
 		"delay": "^5.0.0",
-		"in-range": "^3.0.0",
-		"p-defer": "^4.0.0",
-		"random-int": "^3.0.0",
-		"time-span": "^5.0.0",
+		"in-range": "2.0.0",
+		"p-defer": "3.0.0",
+		"random-int": "2.0.1",
+		"time-span": "4.0.0",
 		"ts-node": "^10.9.1",
 		"tsd": "^0.25.0",
 		"typescript": "^4.8.4",
@@ -68,7 +79,7 @@
 			"test/**"
 		],
 		"extensions": {
-			"ts": "module"
+			"ts": "commonjs"
 		},
 		"nodeArguments": [
 			"--loader=ts-node/esm"
@@ -78,7 +89,14 @@
 		"rules": {
 			"@typescript-eslint/member-ordering": "off",
 			"@typescript-eslint/no-floating-promises": "off",
-			"@typescript-eslint/no-invalid-void-type": "off"
+			"@typescript-eslint/no-invalid-void-type": "off",
+			"@typescript-eslint/no-unnecessary-type-assertion": "warn"
 		}
-	}
+	},
+	"author": {
+		"name": "Nguyen Ngoc Long",
+		"url": "https://nguyenngoclongdev.github.io"
+	},
+	"publisher": "nguyenngoclong",
+	"license": "MIT"
 }

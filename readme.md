@@ -1,6 +1,6 @@
-# p-queue
+# p-queue-cjs
 
-> Promise queue with concurrency control
+> Promise queue with concurrency control. A fork of [p-queue](https://github.com/sindresorhus/p-queue) for commonjs.
 
 Useful for rate-limiting async (or sync) operations. For example, when interacting with a REST API or when doing CPU/memory intensive tasks.
 
@@ -11,7 +11,7 @@ Note that the project is feature complete. We are happy to review pull requests,
 ## Install
 
 ```sh
-npm install p-queue
+npm install p-queue-cjs
 ```
 
 **Warning:** This package is native [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and no longer provides a CommonJS export. If your project uses CommonJS, you'll have to [convert to ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) or use the [dynamic `import()`](https://v8.dev/features/dynamic-import) function. Please don't open issues for questions regarding CommonJS / ESM. You can also use [version 6](https://github.com/sindresorhus/p-queue/tree/v6.6.2) instead which is pretty stable. We will backport security fixes to v6 for the foreseeable future.
@@ -21,7 +21,7 @@ npm install p-queue
 Here we run only one promise at the time. For example, set `concurrency` to 4 to run four promises at the same time.
 
 ```js
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 import got from 'got';
 
 const queue = new PQueue({concurrency: 1});
@@ -144,7 +144,7 @@ Priority of operation. Operations with greater priority will be scheduled first.
 [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) for cancellation of the operation. When aborted, it will be removed from the queue and the `queue.add()` call will reject with an `AbortError`. If the operation is already running, the signal will need to be handled by the operation itself.
 
 ```js
-import PQueue, {AbortError} from 'p-queue';
+import PQueue, {AbortError} from 'p-queue-cjs';
 import got, {CancelError} from 'got';
 
 const queue = new PQueue();
@@ -223,7 +223,7 @@ Size of the queue, filtered by the given options.
 For example, this can be used to find the number of items remaining in the queue with a specific priority level.
 
 ```js
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue();
 
@@ -258,7 +258,7 @@ Emitted as each item is processed in the queue for the purpose of tracking progr
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue({concurrency: 2});
 
@@ -280,7 +280,7 @@ Emitted when an item completes without error.
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue({concurrency: 2});
 
@@ -297,7 +297,7 @@ Emitted if an item throws an error.
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue({concurrency: 2});
 
@@ -322,7 +322,7 @@ The difference with `empty` is that `idle` guarantees that all work from the que
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue();
 
@@ -353,7 +353,7 @@ Emitted every time a task is completed and the number of pending or queued tasks
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue();
 
@@ -388,7 +388,7 @@ A more advanced example to help you understand the flow.
 
 ```js
 import delay from 'delay';
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 const queue = new PQueue({concurrency: 1});
 
@@ -457,7 +457,7 @@ $ node example.js
 For implementing more complex scheduling policies, you can provide a QueueClass in the options:
 
 ```js
-import PQueue from 'p-queue';
+import PQueue from 'p-queue-cjs';
 
 class QueueClass {
 	constructor() {
@@ -484,7 +484,7 @@ class QueueClass {
 const queue = new PQueue({queueClass: QueueClass});
 ```
 
-`p-queue` will call corresponding methods to put and get operations from this queue.
+`p-queue-cjs` will call corresponding methods to put and get operations from this queue.
 
 ## FAQ
 
